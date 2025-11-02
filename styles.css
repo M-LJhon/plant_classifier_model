@@ -1,0 +1,82 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+/* Estilos generales: escritorio y tablet */
+body {
+    font-size: 16px;
+}
+
+/* ---- RESPONSIVE para celulares ---- */
+@media (max-width: 768px) {
+    body {
+        font-size: 18px; /* Texto más grande en móvil */
+    }
+
+    h1, h2, h3 {
+        font-size: 1.8em; /* Títulos más grandes */
+        text-align: center;
+    }
+
+    .card {
+        width: 95%; /* Que ocupe más del ancho en móvil */
+        margin: auto;
+    }
+
+    .btn {
+        font-size: 18px; /* Botones más legibles */
+        padding: 10px 20px;
+    }
+
+    input[type="file"] {
+        font-size: 16px;
+    }
+
+    #resultado {
+        font-size: 18px; /* Texto de resultados más grande */
+    }
+}
+
+
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('imgs/background.jpg') center/cover;
+    height: 35vh;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    text-align: center;
+}
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+}
+
+.cont-card {
+    padding: 40px;
+}
+
+.btn {
+    width: 100px;
+    background-color: rgb(6, 68, 6);
+    border: none;
+}
+
+.btn:hover {
+    background-color: rgb(1, 131, 40);
+}
+
+.card-body {
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}

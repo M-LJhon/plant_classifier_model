@@ -1,0 +1,46 @@
+{
+  "cactus": {
+    "nombre_comun": "Cactus",
+    "riego": "Riega solo cuando la tierra esté completamente seca. En verano cada 10-15 días, en invierno cada 3-4 semanas.",
+    "luz": "Requiere abundante luz solar directa, al menos 4 a 6 horas diarias.",
+    "temperatura": "Prefiere climas cálidos entre 18°C y 30°C. No tolera heladas.",
+    "suelo": "Sustrato arenoso o con buen drenaje, especial para cactus o suculentas.",
+    "cuidados_especiales": "Evitar exceso de agua y mantener en maceta con orificios de drenaje."
+  },
+
+  "fern": {
+    "nombre_comun": "Helecho",
+    "riego": "Mantén la tierra constantemente húmeda pero no encharcada. Pulveriza las hojas para mantener la humedad.",
+    "luz": "Prefiere luz indirecta brillante o sombra parcial.",
+    "temperatura": "Ideal entre 15°C y 25°C. Evitar corrientes de aire y lugares secos.",
+    "suelo": "Tierra rica en materia orgánica con buena retención de humedad.",
+    "cuidados_especiales": "Evita la exposición directa al sol; los rayos pueden quemar las hojas."
+  },
+
+  "rose": {
+    "nombre_comun": "Rosa",
+    "riego": "Riega regularmente, manteniendo el suelo húmedo pero no empapado. Evita mojar las hojas.",
+    "luz": "Necesita al menos 6 horas diarias de sol directo.",
+    "temperatura": "Prefiere temperaturas entre 15°C y 28°C.",
+    "suelo": "Sustrato rico en nutrientes, ligeramente ácido y bien drenado.",
+    "cuidados_especiales": "Poda las flores marchitas y usa fertilizante rico en potasio cada 2-3 semanas durante la floración."
+  },
+
+  "sunflower": {
+    "nombre_comun": "Girasol",
+    "riego": "Riega cada pocos días para mantener el suelo húmedo, especialmente durante el crecimiento.",
+    "luz": "Requiere luz solar directa durante la mayor parte del día (6-8 horas).",
+    "temperatura": "Ideal entre 18°C y 30°C.",
+    "suelo": "Tierra fértil y bien drenada, con pH ligeramente ácido a neutro.",
+    "cuidados_especiales": "Gira naturalmente hacia el sol. Asegura suficiente espacio para el crecimiento de raíces profundas."
+  },
+
+  "tulip": {
+    "nombre_comun": "Tulipán",
+    "riego": "Riega moderadamente; el suelo debe mantenerse húmedo pero no saturado.",
+    "luz": "Prefiere sol directo o sombra parcial.",
+    "temperatura": "Requiere climas frescos. Ideal entre 10°C y 18°C.",
+    "suelo": "Sustrato suelto, con buen drenaje y rico en materia orgánica.",
+    "cuidados_especiales": "Planta los bulbos en otoño y evita regar en exceso durante el invierno."
+  }
+}

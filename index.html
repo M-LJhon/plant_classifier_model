@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clasificador de Plantas</title>
+  <link rel="stylesheet" href="bootstrap-4.0.0-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hero">
+    <h1>Conoce los cuidados de tu planta con IA</h1>
+  </div>
+
+  <div class="cont-card">
+    <div class="card">
+      <!-- Subir imagen -->
+      <div class="card-header">
+        <h2>Subir imagen de planta</h2>
+      </div>
+      <div class="card-body">
+        <input type="file" id="fileInput" accept="image/*"/>
+        <button class="btn btn-primary" id="predictBtn">Predecir</button>
+        <!-- Vista previa -->
+        <div class="mt-3 text-center">
+          <img id="preview" src="" alt="Vista previa" style="max-width: 300px; display: none; border-radius: 8px;">
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="card-header">
+        <h2>Resultado</h2>
+      </div>
+      <div class="card-body">
+        <p id="planta" class="font-weight-bold"></p>
+        <p id="confianza"></p>
+        <div id="cuidados" class="mt-3"></div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    const fileInput = document.getElementById("fileInput");
+    const predictBtn = document.getElementById("predictBtn");
+    const preview = document.getElementById("preview");
+
+    let selectedFile = null;
+
+    // Mostrar vista previa al seleccionar imagen
+    fileInput.addEventListener("change", (event) => {
+      selectedFile = event.target.files[0];
+      if (selectedFile) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+          preview.src = e.target.result;
+          preview.style.display = "block";
+        };
+        reader.readAsDataURL(selectedFile);
+      }
+    });
+
+    // Enviar la imagen al backend y mostrar resultados
+    predictBtn.addEventListener("click", async () => {
+      if (!selectedFile) {
+        alert("Por favor selecciona una imagen");
+        return;
+      }
+
+      const formData = new FormData();
+      formData.append("file", selectedFile);
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/predict/", {
+          method: "POST",
+          body: formData
+        });
+
+        const data = await response.json();
+        console.log(data);
+
+        // Mostrar resultados básicos
+        document.getElementById("planta").innerHTML = `Planta detectada: ${data.planta}`;
+        document.getElementById("confianza").innerHTML = `Confianza: ${data.confianza.toFixed(2)}%`;
+
+        // Mostrar los cuidados del JSON
+        const cuidados = data.cuidados;
+        let textoCuidados = `
+          <b>Nombre común:</b> ${cuidados.nombre_comun}<br>
+          <b>Riego:</b> ${cuidados.riego}<br>
+          <b>Luz:</b> ${cuidados.luz}<br>
+          <b>Temperatura:</b> ${cuidados.temperatura}<br>
+          <b>Suelo:</b> ${cuidados.suelo}<br>
+          <b>Cuidados especiales:</b> ${cuidados.cuidados_especiales}
+        `;
+        document.getElementById("cuidados").innerHTML = textoCuidados;
+
+      } catch (error) {
+        console.error("Error en la predicción:", error);
+        alert("Ocurrió un error al procesar la imagen.");
+      }
+    });
+  </script>
+</body>
+</html>
