@@ -8,7 +8,6 @@ from PIL import Image
 
 # Inicializar la app
 app = FastAPI(title="API Clasificación de Plantas")
-
 # Cargar el modelo entrenado
 MODEL_PATH = "plant_classifier_model.h5"
 model = load_model(MODEL_PATH)
