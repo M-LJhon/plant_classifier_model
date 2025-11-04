@@ -13,11 +13,19 @@ body {
 /* ---- RESPONSIVE para celulares ---- */
 @media (max-width: 768px) {
     body {
-        font-size: 18px; /* Texto más grande en móvil */
+        font-size: 15px; /* Texto más grande en móvil */
     }
 
-    h1, h2, h3 {
-        font-size: 1.8em; /* Títulos más grandes */
+    input[type="file"] {
+        color: rgba(0, 0, 0, 0);
+    }
+
+    h1{
+        font-size: 20px; /* Títulos más grandes */
+        text-align: center;
+    }
+
+    h2 {
         text-align: center;
     }
 
@@ -54,7 +62,7 @@ body {
 }
 h1 {
     color: rgb(255, 255, 255);
-    font-size: 50px;
+    font-size: 40px;
 }
 
 .cont-card {
